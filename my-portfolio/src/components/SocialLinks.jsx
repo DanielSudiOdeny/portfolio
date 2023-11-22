@@ -2,6 +2,7 @@ import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsPersonLinesFill } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 const SocialLinks = () => {
   const links = [
@@ -19,7 +20,7 @@ const SocialLinks = () => {
       id: 2,
       child: (
         <>
-          LinkedIn <FaGithub size={30} />
+          Github <FaGithub size={30} />
         </>
       ),
       href: "https://github.com/DanielSudiOdeny.com",
@@ -28,7 +29,7 @@ const SocialLinks = () => {
       id: 3,
       child: (
         <>
-          LinkedIn <HiOutlineMail size={30} />
+          Email <HiOutlineMail size={30} />
         </>
       ),
       href: "mailto:foo@gmail.com",
@@ -47,12 +48,16 @@ const SocialLinks = () => {
   ];
   return (
     <div className="hidden lg:flex flex-col top-[35%] left-0 fixed">
-      <ul>
+      <motion.ul
+        initial={{ x: -500 }}
+        animate={{ x: 0 }}
+        transition={{ duration: 2, delay: 10, type: "tween" }}
+      >
         {links.map(({ id, child, href, style, download }) => (
           <li
             key={id}
             className={
-              "ml-[-100px] hover:rounded-md flex justify-between items-center h-14 w-40 px-4 bg-gray-600 duration-300 hover:ml-[-10px]" +
+              "ml-[-100px] hover:rounded-md flex justify-between items-center h-14 w-40 px-4 bg-gray-900 duration-300 hover:ml-[-10px]" +
               " " +
               style
             }
@@ -68,7 +73,7 @@ const SocialLinks = () => {
             </a>
           </li>
         ))}
-      </ul>
+      </motion.ul>
     </div>
   );
 };

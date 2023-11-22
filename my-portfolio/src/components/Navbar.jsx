@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const links = [
@@ -28,10 +29,22 @@ const Navbar = () => {
   return (
     <div className="flex justify-between items-center w-full h-20 px-8 py-12 bg-black text-white fixed">
       <div>
-        <h1 className="text-3xl md:text-5xl font-signature ml-2">Daniel.dev</h1>
+        <motion.h1
+          initial={{ opacity: 0, x: -500 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 2, type: "tween" }}
+          className="text-3xl md:text-5xl font-signature ml-2 "
+        >
+          Daniel.dev
+        </motion.h1>
       </div>
 
-      <ul className="md:flex hidden">
+      <motion.ul
+        initial={{ opacity: 0, x: 500 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2, type: "tween" }}
+        className="md:flex hidden"
+      >
         {links.map(({ id, link }) => (
           <li
             key={id}
@@ -43,7 +56,7 @@ const Navbar = () => {
             </Link>
           </li>
         ))}
-      </ul>
+      </motion.ul>
 
       <div
         onClick={() => setNav(!nav)}
