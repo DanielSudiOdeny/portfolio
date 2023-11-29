@@ -1,28 +1,42 @@
 import React from "react";
-
+import { motion } from "framer-motion";
+import AboutImage from "../assets/AboutImage.png";
 const About = () => {
   return (
     <div
       name="about"
-      className="w-full  flex items-center h-screen bg-gradient-to-b from-gray-800 to-black text-white"
+      className="snap-center flex h-screen  bg-gradient-to-b from-gray-800 to-black text-white"
     >
-      <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full">
-        <div className="pb-8 flex justify-center flex-col items-center md:block ">
-          <p className="text-4xl font-bold inline border-b-4">About</p>
-          <p className="mt-10 text-center md:text-left text-xl max-w-xl md:max-w-full">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-            provident laboriosam illum dicta! Odit facilis dolorum architecto
-            velit ducimus obcaecati asperiores nam adipisci voluptatem ab in
-            accusamus, dolorem et saepe.
-          </p>
+      <div className=" md:max-w-screen-lg md:w-3/4 bg-gradient-to-b from-gray-800 to-black flex flex-col h-screen text-center md:flex  md:justify-center md:gap-20 md:items-center justify-center mx-auto">
+        <div className=" px-4 md:w-full md:flex md:justify-around md:gap-4 md:items-center">
+          <div className="flex justify-center items-center">
+            <motion.img
+              initial={{ x: -200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1.2 }}
+              viewport={{ once: true }}
+              src={AboutImage}
+              className=" md:w-[350px] md:h-[400px] w-[14rem] h-[14rem] self-center object-cover md:rounded-3xl rounded-full mb-10 sm:mb-20 md:mb-0"
+              alt=""
+            />
+          </div>
 
-          <br />
-
-          <p className="text-xl text-center md:text-left max-w-xl md:max-w-6xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem a
-            facere veniam aut repellendus consequuntur odit et, quos, ea omnis
-            magni magnam adipisci animi fugiat? Atque ullam illum cum debitis.
-          </p>
+          <div className="md:space-y-8 space-y-10 px-0">
+            <h4 className="text-3xl sm:text-4xl font-semibold">
+              Here is a{" "}
+              <span className="border-b-4 border-purple-500 ">little</span>{" "}
+              background
+            </h4>
+            <p className="text-md md:max-w-xl text-gray-400">
+              Hey, I'm Daniel Odeny, a tech enthusiast based in Nairobi, Kenya.
+              I'm a software engineer who turns ideas into code, enjoying the
+              creativity in every line. For me, tech is not just a job; it's a
+              continuous journey of learning and building. Let's explore this
+              exciting world together, whether it's collaborating on projects,
+              keeping up with trends, or just sharing the love for tech. Ready
+              to build awesome stuff? 🚀
+            </p>
+          </div>
         </div>
       </div>
     </div>

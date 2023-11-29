@@ -8,14 +8,23 @@ import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 const App = () => {
   return (
-    <div>
+    <div className="snap-y snap-mandatory scroll-smooth h-screen overflow-auto  scrollbar-track-black/70 scrollbar scrollbar-thumb-gray-400/80">
       <Navbar />
+
       <Home />
+
       <About />
+
       <Portfolio />
-      <Experience />
-      <Contact />
-      <SocialLinks />
+
+      <section>
+        <Experience />
+      </section>
+
+      <section>
+        <Contact />
+      </section>
+      {/* <SocialLinks /> */}
     </div>
   );
 };

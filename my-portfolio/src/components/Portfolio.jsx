@@ -1,60 +1,87 @@
 import React from "react";
+import { TbExternalLink } from "react-icons/tb";
+import { TbBrandGithub } from "react-icons/tb";
 import PortfolioImage from "../assets/Portfolio.jpg";
+import PortfolioImage2 from "../assets/Project2.png";
+import PortfolioImage3 from "../assets/Project3.png";
 const Portfolio = () => {
   const projects = [
     {
       id: 1,
       src: PortfolioImage,
+      title: "Job Seeking Application",
+      description:
+        "The JobSeeker app is a dynamic platform designed to empower individuals in their quest for professional growth. Tailored for job seekers, the app streamlines the job search process, offering a user-friendly interface and a range of features to enhance the overall experience.",
     },
     {
       id: 2,
-      src: PortfolioImage,
+      src: PortfolioImage2,
+      title: "Fitness Tracker Application",
+      description:
+        "The Fitness Tracker App helps user to track they workout progress inorder to keep fit. It majorly provides the user with the necessary tools that allow them to customize their workout routine.",
     },
     {
       id: 3,
-      src: PortfolioImage,
-    },
-    {
-      id: 4,
-      src: PortfolioImage,
-    },
-    {
-      id: 5,
-      src: PortfolioImage,
-    },
-    {
-      id: 6,
-      src: PortfolioImage,
+      src: PortfolioImage3,
+      title: "Event Notifier application",
+      description:
+        "An Event notifier application that allows event planners to connect with their audience by allowing audience to book tickets for the specific event the event planners create online. It takes away the struggle for the audience having to physically purchase the tickets from the event planner.",
     },
   ];
   return (
     <div
       name="portfolio"
-      className="bg-gradient-to-b from-black to-gray-800 w-full text-white md:h-screen"
+      className="bg-gradient-to-b snap-center from-black to-gray-800 w-full text-white md:h-screen"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
-        <div className="pb-8 flex flex-col items-center">
-          <p className="text-4xl font-bold inline border-b-4 border-gray-500">
-            Portfolio
+        <div className="pt-24 pb-4 text-center">
+          <p className="md:text-3xl text-3xl  tracking-[20px] font-bold inline text-gray-500">
+            Projects
           </p>
-          <p className="py-8">Check out some of my recent projects here</p>
+          {/* <p className="py-2 tracking-[3px]">
+            Check out some of my recent projects here
+          </p> */}
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-8">
-          {projects.map(({ id, src }) => (
-            <div key={id} className="shadow-md shadow-gray-600">
-              <img
-                src={src}
-                alt=""
-                className="rounded-md duration-200 hover:scale-105"
-              />
-              <div className="flex items-center justify-center">
-                <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
-                  Demo
-                </button>
-                <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
-                  Code
-                </button>
+        <div className="flex gap-4 shadow-md shadow-gray-600 p-4 overflow-x-auto snap-x snap-mandatory md:scrollbar-thin md:scrollbar-track-gray-400/20 md:scrollbar-thumb-slate-400/80">
+          {projects.map(({ id, src, description, title }) => (
+            <div
+              key={id}
+              className="flex w-[350px] md:w-full shadow-md shadow-gray-600 h-full snap-center opacity-50 hover:opacity-100 cursor-pointer transition-opacity duration-200"
+            >
+              <div className="  p-4 h-[600px] flex flex-col justify-center gap-10 items-center md:w-[600px] w-[30rem] ">
+                <div className=" md:w-5/6 mx-auto">
+                  <div>
+                    <img
+                      src={src}
+                      alt=""
+                      className="rounded-md duration-200 w-[20rem] md:w-full  h-[180px] md:h-[270px]"
+                    />
+                  </div>
+                </div>
+
+                <div className="mx-auto w-5/6 text-center md:w-5/6 flex flex-col gap-4">
+                  <h1 className="font-extrabold text-gray-50 h-14 tracking-[2px] text-xl md:text-2xl">
+                    {title}
+                  </h1>
+                  <p className="text-gray-400 h-36 md:h-24 text-center">
+                    {description}
+                  </p>
+                  <div className="py-14  md:py-4  flex items-center justify-around font-bold text-xl md:text-2xl">
+                    <button className="   duration-200 hover:scale-105 hover:text-purple-500 flex gap-2 justify-center items-center ">
+                      <span>Code</span>{" "}
+                      <span>
+                        <TbBrandGithub size={22} />
+                      </span>
+                    </button>
+                    <button className=" duration-200 hover:scale-105 hover:text-purple-500 flex gap-2">
+                      <span>Live Demo</span>{" "}
+                      <span>
+                        <TbExternalLink size={22} />
+                      </span>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           ))}

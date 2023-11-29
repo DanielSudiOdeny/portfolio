@@ -27,12 +27,12 @@ const Navbar = () => {
     },
   ];
   return (
-    <div className="flex justify-between items-center w-full h-20 px-8 py-12 bg-black text-white fixed">
+    <div className="flex justify-between items-center w-full h-20 px-8 py-12 bg-black text-white fixed z-10">
       <div>
         <motion.h1
           initial={{ opacity: 0, x: -500 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 2, type: "tween" }}
+          transition={{ duration: 1, type: "tween" }}
           className="text-3xl md:text-5xl font-signature ml-2 "
         >
           Daniel.dev
@@ -42,7 +42,7 @@ const Navbar = () => {
       <motion.ul
         initial={{ opacity: 0, x: 500 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 2, type: "tween" }}
+        transition={{ duration: 1, type: "tween" }}
         className="md:flex hidden"
       >
         {links.map(({ id, link }) => (
@@ -65,7 +65,7 @@ const Navbar = () => {
         {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
       </div>
       {nav && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500">
+        <motion.ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500">
           {links.map(({ id, link }) => (
             <li
               key={id}
@@ -82,7 +82,7 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
-        </ul>
+        </motion.ul>
       )}
     </div>
   );
