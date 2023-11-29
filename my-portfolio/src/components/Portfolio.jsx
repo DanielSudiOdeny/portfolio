@@ -34,7 +34,7 @@ const Portfolio = () => {
       className="bg-gradient-to-b snap-center from-black to-gray-800 w-full text-white md:h-screen"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
-        <div className="pt-24 pb-4 text-center">
+        <div className="pt-20 pb-4 text-center">
           <p className="md:text-3xl text-3xl  tracking-[20px] font-bold inline text-gray-500">
             Projects
           </p>
@@ -49,7 +49,7 @@ const Portfolio = () => {
               key={id}
               className="flex w-[350px] md:w-full shadow-md shadow-gray-600 h-full snap-center opacity-50 hover:opacity-100 cursor-pointer transition-opacity duration-200"
             >
-              <div className="  p-4 h-[600px] flex flex-col justify-center gap-10 items-center md:w-[600px] w-[30rem] ">
+              <div className="p-4 h-[600px] flex flex-col justify-center gap-10 items-center md:w-[600px] w-[30rem] ">
                 <div className=" md:w-5/6 mx-auto">
                   <div>
                     <img
@@ -67,7 +67,7 @@ const Portfolio = () => {
                   <p className="text-gray-400 h-36 md:h-24 text-center">
                     {description}
                   </p>
-                  <div className="py-14  md:py-4  flex items-center justify-around font-bold text-xl md:text-2xl">
+                  <div className="pt-20  md:py-4  flex items-center justify-around font-bold text-xl md:text-2xl">
                     <button className="   duration-200 hover:scale-105 hover:text-purple-500 flex gap-2 justify-center items-center ">
                       <span>Code</span>{" "}
                       <span>
