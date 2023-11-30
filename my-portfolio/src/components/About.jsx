@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import AboutImage from "../assets/AboutImage.png";
+import AboutImage from "../assets/hero10.png";
 const About = () => {
   return (
     <div
@@ -9,14 +9,14 @@ const About = () => {
     >
       <div className=" md:max-w-screen-lg md:w-3/4 bg-gradient-to-b from-gray-800 to-black flex flex-col h-screen text-center md:flex  md:justify-center md:gap-20 md:items-center justify-center mx-auto">
         <div className=" px-4 md:w-full md:flex md:justify-around md:gap-4 md:items-center">
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center opacity-80 hover:opacity-100 transition-opacity duration-300">
             <motion.img
               initial={{ x: -200, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 1.2 }}
               viewport={{ once: true }}
               src={AboutImage}
-              className=" md:w-[350px] md:h-[400px] w-[14rem] h-[14rem] self-center object-cover md:rounded-3xl rounded-full mb-10 sm:mb-20 md:mb-0"
+              className=" profile-img2 border-4 border-gray-400 opacity md:w-[280px] md:h-[310px] w-[14rem] h-[14rem] self-center object-cover md:rounded-3xl rounded-full mb-10 sm:mb-20 md:mb-0"
               alt=""
             />
           </div>

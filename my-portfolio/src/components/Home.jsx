@@ -1,5 +1,5 @@
 import React from "react";
-import HeroImage from "../assets/Hero8.jpg";
+import HeroImage from "../assets/Hero9.jpg";
 import { LuArrowRight } from "react-icons/lu";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
@@ -68,7 +68,7 @@ const Home = () => {
             // transition={{ type: "tween", duration: 2, delay: 2 }}
             src={HeroImage}
             alt="my profile"
-            className="md:rounded-3xl rounded-full shadow-md  shadow-gray-800 md:mx-auto w-[14rem] sm:[20rem] md:w-[350px] flex-1 md:h-[400px] h-[14rem] mb-8 object-cover"
+            className="profile-image opacity-80 hover:opacity-100 transition-opacity duration-300 border-4 border-gray-400 md:rounded-3xl rounded-full shadow-md  shadow-gray-800 md:mx-auto w-[14rem] sm:[20rem] md:w-[280px] flex-1 md:h-[310px] h-[14rem] mb-8 object-cover"
           />
         </div>
       </div>
