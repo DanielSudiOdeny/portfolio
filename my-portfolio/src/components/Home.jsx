@@ -1,7 +1,7 @@
 import React from "react";
 import HeroImage from "../assets/Hero9.jpg";
 import { LuArrowRight } from "react-icons/lu";
-import { Link } from "react-scroll";
+
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaLinkedinIn } from "react-icons/fa";
 import { TbBrandGithub, TbBrandLinkedin } from "react-icons/tb";
@@ -36,10 +36,18 @@ const Home = () => {
           </motion.p>
           <div className="py-6 flex justify-center md:justify-start items-center gap-4">
             <span className="hover:text-purple-500 cursor-pointer">
-              <TbBrandLinkedin size={30} />
+              <a
+                href="https://www.linkedin.com/in/daniel-odeny-ab622b171/"
+                target="_blank"
+              >
+                <TbBrandLinkedin size={30} />
+              </a>
             </span>
             <span className="hover:text-purple-500 cursor-pointer">
-              <TbBrandGithub size={30} />
+              <a href="https://github.com/DanielSudiOdeny" target="_blank">
+                {" "}
+                <TbBrandGithub size={30} />
+              </a>
             </span>
           </div>
           {/* <motion.div

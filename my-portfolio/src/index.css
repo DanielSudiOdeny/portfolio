@@ -75,6 +75,12 @@ button:focus-visible {
 @layer base {
   html {
     font-family: "Raleway", sans-serif;
+    scroll-snap-type: y mandatory;
+  }
+  body {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
   }
 
   .profile-image {

@@ -47,7 +47,7 @@ const Portfolio = () => {
           {projects.map(({ id, src, description, title }) => (
             <div
               key={id}
-              className="flex w-[350px] md:w-full shadow-md shadow-gray-600 h-full snap-center opacity-50 hover:opacity-100 cursor-pointer transition-opacity duration-200"
+              className="flex w-[350px] md:w-full shadow-md shadow-gray-600 h-full snap-center md:opacity-50 md:hover:opacity-100 cursor-pointer transition-opacity duration-200"
             >
               <div className="p-4 h-[600px] flex flex-col justify-center gap-10 items-center md:w-[600px] w-[30rem] ">
                 <div className=" md:w-5/6 mx-auto">

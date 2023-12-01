@@ -1,30 +1,35 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import SocialLinks from "./components/SocialLinks";
 import About from "./components/About";
 import Portfolio from "./components/Portfolio";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import { Element } from "react-scroll";
+
 const App = () => {
   return (
-    <div className="snap-y snap-mandatory scroll-smooth h-screen overflow-auto  scrollbar-track-black/70 scrollbar scrollbar-thumb-gray-400/80">
+    <div className="snap-y snap-mandatory h-screen  scrollbar-track-black/70 scrollbar scrollbar-thumb-gray-400/80">
       <Navbar />
-
-      <Home />
-
-      <About />
-
-      <Portfolio />
-
-      <section>
+      <Element name="home">
+        <Home />
+      </Element>
+      <Element name="about">
+        <About />
+      </Element>
+      <Element name="portfolio">
+        <Portfolio />
+      </Element>
+      <Element name="experience">
         <Experience />
-      </section>
-
-      <section>
+      </Element>
+      <Element name="contact">
         <Contact />
-      </section>
-      {/* <SocialLinks /> */}
+      </Element>
+      <Element name="footer">
+        <Footer />
+      </Element>
     </div>
   );
 };

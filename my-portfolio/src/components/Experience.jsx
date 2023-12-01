@@ -8,6 +8,8 @@ import tailwindcss from "../assets/tailwind.png";
 import flask from "../assets/flask.svg";
 import typescript from "../assets/typescript.png";
 import postgress from "../assets/postgress.png";
+import django from "../assets/django.png";
+import postman from "../assets/postman.png";
 const Experience = () => {
   const techstack = [
     {
@@ -64,7 +66,7 @@ const Experience = () => {
       id: 8,
       src: typescript,
       // title: "Flask",
-      style: "shadow-blue-900",
+      style: "shadow-sky-900",
       textColor: "hover:text-white",
     },
     {
@@ -73,6 +75,20 @@ const Experience = () => {
       // title: "Flask",
       style: "shadow-cyan-500",
       textColor: "hover:text-white",
+    },
+    {
+      id: 10,
+      src: django,
+      // title: "Flask",
+      style: "shadow-green-900",
+      textColor: "hover:text-lime-600",
+    },
+    {
+      id: 10,
+      src: postman,
+      // title: "Flask",
+      style: "shadow-amber-900",
+      textColor: "hover:text-amber-900",
     },
   ];
   return (
@@ -93,7 +109,7 @@ const Experience = () => {
           {techstack.map(({ id, src, title, style, textColor }) => (
             <div
               key={id}
-              className={`shadow-md flex flex-col justify-center items-center rounded-full w-20 hover:scale-105 hover:bg-grey-100 duration-500 py-2 h-20 ${style} ${textColor}`}
+              className={`shadow-md flex flex-col justify-center items-center rounded-full w-20 hover:scale-110 hover:bg-grey-100 duration-500 py-2 h-20 ${style} ${textColor}`}
             >
               <img src={src} alt="" className="w-10 mx-auto object-cover" />
               <p className="mt-4">{title}</p>
