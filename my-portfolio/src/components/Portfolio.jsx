@@ -4,12 +4,15 @@ import { TbBrandGithub } from "react-icons/tb";
 import PortfolioImage from "../assets/Portfolio.jpg";
 import PortfolioImage2 from "../assets/Project2.png";
 import PortfolioImage3 from "../assets/Project3.png";
+import PortfolioImage4 from "../assets/bank-of-flatiron.png";
 const Portfolio = () => {
   const projects = [
     {
       id: 1,
       src: PortfolioImage,
       title: "Job Seeking Application",
+      liveDemo: "",
+      codeLink: "",
       description:
         "The JobSeeker app is a dynamic platform designed to empower individuals in their quest for professional growth. Tailored for job seekers, the app streamlines the job search process, offering a user-friendly interface and a range of features to enhance the overall experience.",
     },
@@ -17,6 +20,8 @@ const Portfolio = () => {
       id: 2,
       src: PortfolioImage2,
       title: "Fitness Tracker Application",
+      liveDemo: "",
+      codeLink: "",
       description:
         "The Fitness Tracker App helps user to track they workout progress inorder to keep fit. It majorly provides the user with the necessary tools that allow them to customize their workout routine.",
     },
@@ -24,6 +29,20 @@ const Portfolio = () => {
       id: 3,
       src: PortfolioImage3,
       title: "Event Notifier application",
+      liveDemo:
+        "https://danielsudiodeny.github.io/event-notifier-application-project/",
+      codeLink:
+        "https://github.com/DanielSudiOdeny/event-notifier-application-project",
+      description:
+        "An Event notifier application that allows event planners to connect with their audience by allowing audience to book tickets for the specific event the event planners create online. It takes away the struggle for the audience having to physically purchase the tickets from the event planner.",
+    },
+    {
+      id: 4,
+      src: PortfolioImage4,
+      title: "Banking Application",
+      liveDemo: "https://bank-of-flatiron-application.vercel.app/",
+      codeLink:
+        "https://github.com/DanielSudiOdeny/bank-of-flatiron-application",
       description:
         "An Event notifier application that allows event planners to connect with their audience by allowing audience to book tickets for the specific event the event planners create online. It takes away the struggle for the audience having to physically purchase the tickets from the event planner.",
     },
@@ -44,47 +63,59 @@ const Portfolio = () => {
         </div>
 
         <div className="flex gap-4 shadow-md shadow-gray-600 p-4 overflow-x-auto snap-x snap-mandatory md:scrollbar-thin md:scrollbar-track-gray-400/20 md:scrollbar-thumb-slate-400/80">
-          {projects.map(({ id, src, description, title }) => (
-            <div
-              key={id}
-              className="flex w-[350px] md:w-full shadow-md shadow-gray-600 h-full snap-center md:opacity-50 md:hover:opacity-100 cursor-pointer transition-opacity duration-200"
-            >
-              <div className="p-4 h-[600px] flex flex-col justify-center gap-10 items-center md:w-[600px] w-[30rem] ">
-                <div className=" md:w-5/6 mx-auto">
-                  <div>
-                    <img
-                      src={src}
-                      alt=""
-                      className="rounded-md duration-200 w-[20rem] md:w-full  h-[180px] md:h-[270px]"
-                    />
+          {projects.map(
+            ({ id, src, description, title, liveDemo, codeLink }) => (
+              <div
+                key={id}
+                className="flex w-[350px] md:w-full shadow-md shadow-gray-600 h-full snap-center md:opacity-50 md:hover:opacity-100 cursor-pointer transition-opacity duration-200"
+              >
+                <div className="p-4 h-[600px] flex flex-col justify-center gap-10 items-center md:w-[600px] w-[30rem] ">
+                  <div className=" md:w-5/6 mx-auto">
+                    <div>
+                      <img
+                        src={src}
+                        alt=""
+                        className="rounded-md duration-200 w-[20rem] md:w-full  h-[180px] md:h-[270px]"
+                      />
+                    </div>
                   </div>
-                </div>
 
-                <div className="mx-auto w-5/6 text-center md:w-5/6 flex flex-col gap-4">
-                  <h1 className="font-extrabold text-gray-50 h-14 tracking-[2px] text-xl md:text-2xl">
-                    {title}
-                  </h1>
-                  <p className="text-gray-400 h-36 md:h-24 text-center">
-                    {description}
-                  </p>
-                  <div className="pt-20  md:py-4  flex items-center justify-around font-bold text-xl md:text-2xl">
-                    <button className="   duration-200 hover:scale-105 hover:text-purple-500 flex gap-2 justify-center items-center ">
-                      <span>Code</span>{" "}
-                      <span>
-                        <TbBrandGithub size={22} />
-                      </span>
-                    </button>
-                    <button className=" duration-200 hover:scale-105 hover:text-purple-500 flex gap-2">
-                      <span>Live Demo</span>{" "}
-                      <span>
-                        <TbExternalLink size={22} />
-                      </span>
-                    </button>
+                  <div className="mx-auto w-5/6 text-center md:w-5/6 flex flex-col gap-4">
+                    <h1 className="font-extrabold text-gray-50 h-14 tracking-[2px] text-xl md:text-2xl">
+                      {title}
+                    </h1>
+                    <p className="text-gray-400 h-36 md:h-24 text-center">
+                      {description}
+                    </p>
+                    <div className="pt-20  md:py-4  flex items-center justify-around font-bold text-xl md:text-2xl">
+                      <button className="   duration-200 hover:scale-105 hover:text-purple-500 flex gap-2 justify-center items-center ">
+                        <span>
+                          {" "}
+                          <a href={codeLink} target="_blank">
+                            Code
+                          </a>
+                        </span>{" "}
+                        <span>
+                          <TbBrandGithub size={22} />
+                        </span>
+                      </button>
+                      <button className=" duration-200 hover:scale-105 hover:text-purple-500 flex gap-2">
+                        <span>
+                          {" "}
+                          <a href={liveDemo} target="_blank">
+                            Live Demo
+                          </a>
+                        </span>{" "}
+                        <span>
+                          <TbExternalLink size={22} />
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            )
+          )}
         </div>
       </div>
     </div>

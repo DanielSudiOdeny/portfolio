@@ -10,7 +10,7 @@ import { Element } from "react-scroll";
 
 const App = () => {
   return (
-    <div className="snap-y snap-mandatory h-screen  scrollbar-track-black/70 scrollbar scrollbar-thumb-gray-400/80">
+    <div>
       <Navbar />
       <Element name="home">
         <Home />

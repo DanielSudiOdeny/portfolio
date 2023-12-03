@@ -8,7 +8,7 @@ const About = () => {
       className="snap-center flex h-screen  bg-gradient-to-b from-gray-800 to-black text-white"
     >
       <div className=" md:max-w-screen-lg md:w-3/4 bg-gradient-to-b from-gray-800 to-black flex flex-col h-screen text-center md:flex  md:justify-center md:gap-20 md:items-center justify-center mx-auto">
-        <div className=" px-4 md:w-full md:flex md:justify-around md:gap-4 md:items-center">
+        <div className=" px-14 md:w-full md:flex md:justify-around md:gap-4 md:items-center">
           <div className="flex justify-center items-center opacity-80 hover:opacity-100 transition-opacity duration-300">
             <motion.img
               initial={{ x: -200, opacity: 0 }}
