@@ -5,6 +5,7 @@ import PortfolioImage from "../assets/Portfolio.jpg";
 import PortfolioImage2 from "../assets/Project2.png";
 import PortfolioImage3 from "../assets/Project3.png";
 import PortfolioImage4 from "../assets/bank-of-flatiron.png";
+import { motion } from "framer-motion";
 const Portfolio = () => {
   const projects = [
     {
@@ -53,14 +54,19 @@ const Portfolio = () => {
       className="bg-gradient-to-b snap-center from-black to-gray-800 w-full text-white md:h-screen"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
-        <div className="pt-20 pb-4 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: -200 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, type: "tween" }}
+          className="pt-20 pb-4 text-center"
+        >
           <p className="md:text-3xl text-3xl  tracking-[20px] font-bold inline text-gray-500">
             Projects
           </p>
           {/* <p className="py-2 tracking-[3px]">
             Check out some of my recent projects here
           </p> */}
-        </div>
+        </motion.div>
 
         <div className="flex gap-4 shadow-md shadow-gray-600 p-4 overflow-x-auto snap-x snap-mandatory md:scrollbar-thin md:scrollbar-track-gray-400/20 md:scrollbar-thumb-slate-400/80">
           {projects.map(

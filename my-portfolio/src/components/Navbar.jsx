@@ -32,7 +32,7 @@ const Navbar = () => {
     <div className="flex justify-between items-center w-full h-20 px-8 py-12 bg-black text-white fixed z-10">
       <div>
         <motion.h1
-          initial={{ opacity: 0, x: -500 }}
+          initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, type: "tween" }}
           className="text-3xl md:text-5xl font-signature ml-2 "
@@ -44,7 +44,7 @@ const Navbar = () => {
       <motion.ul
         initial={{ opacity: 0, x: 500 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, type: "tween" }}
+        transition={{ duration: 1, delay: 1.2, type: "tween" }}
         className="md:flex hidden"
       >
         {links.map(({ id, link }) => (
@@ -61,9 +61,24 @@ const Navbar = () => {
 
       <div
         onClick={() => setNav(!nav)}
+        initial={{ opacity: 0, x: 500 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 1.2, type: "tween" }}
         className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden "
       >
-        {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
+        {nav ? (
+          <span>
+            <FaTimes size={30} />
+          </span>
+        ) : (
+          <motion.span
+            initial={{ opacity: 0, x: -200 }} // Adjusted the initial properties here
+            animate={{ x: 0, opacity: 1 }} // Added opacity animation for a smoother transition
+            transition={{ duration: 0.3, type: "tween" }}
+          >
+            <FaBars size={30} />
+          </motion.span>
+        )}
       </div>
 
       {nav && (
