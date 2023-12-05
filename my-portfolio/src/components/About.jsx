@@ -22,7 +22,7 @@ const About = () => {
           </div>
 
           <div className="md:space-y-8 space-y-10 px-0">
-            <h4 className="text-3xl sm:text-4xl font-semibold">
+            <h4 className="text-2xl sm:text-4xl font-semibold">
               Here is a{" "}
               <span className="border-b-4 border-purple-500 ">little</span>{" "}
               background

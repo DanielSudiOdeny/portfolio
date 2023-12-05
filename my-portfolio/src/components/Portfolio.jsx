@@ -12,8 +12,8 @@ const Portfolio = () => {
       id: 1,
       src: PortfolioImage,
       title: "Job Seeking Application",
-      liveDemo: "",
-      codeLink: "",
+      liveDemo: "https://workwise-dugl.onrender.com/",
+      codeLink: "https://github.com/DanielSudiOdeny/Job-Seeking-App",
       description:
         "The JobSeeker app is a dynamic platform designed to empower individuals in their quest for professional growth. Tailored for job seekers, the app streamlines the job search process, offering a user-friendly interface and a range of features to enhance the overall experience.",
     },
@@ -22,7 +22,7 @@ const Portfolio = () => {
       src: PortfolioImage2,
       title: "Fitness Tracker Application",
       liveDemo: "",
-      codeLink: "",
+      codeLink: "https://github.com/DanielSudiOdeny/Fitness-Tracker",
       description:
         "The Fitness Tracker App helps user to track they workout progress inorder to keep fit. It majorly provides the user with the necessary tools that allow them to customize their workout routine.",
     },
