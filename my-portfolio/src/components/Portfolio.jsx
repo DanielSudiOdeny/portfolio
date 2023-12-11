@@ -45,7 +45,7 @@ const Portfolio = () => {
       codeLink:
         "https://github.com/DanielSudiOdeny/bank-of-flatiron-application",
       description:
-        "An Event notifier application that allows event planners to connect with their audience by allowing audience to book tickets for the specific event the event planners create online. It takes away the struggle for the audience having to physically purchase the tickets from the event planner.",
+        "A banking application that lets you see your recent transactions in an easy-to-read table. You can add new transactions using a form, making it simple to keep your records up to date. Plus, there is a search bar to help you quickly find specific transactions. It's all about making your banking experience straightforward and accountable!",
     },
   ];
   return (
@@ -87,10 +87,10 @@ const Portfolio = () => {
                   </div>
 
                   <div className="mx-auto w-5/6 text-center md:w-5/6 flex flex-col gap-4">
-                    <h1 className="font-extrabold text-gray-50 h-14 tracking-[2px] text-xl md:text-2xl">
+                    <h1 className="font-extrabold text-gray-50 h-14 md:pb-2 tracking-[2px] text-xl md:text-2xl">
                       {title}
                     </h1>
-                    <p className="text-gray-400 h-36 md:h-24 text-center">
+                    <p className="text-gray-400 h-36 mb-6 md:h-32 text-center">
                       {description}
                     </p>
                     <div className="pt-20  md:py-4  flex items-center justify-around font-bold text-xl md:text-2xl">
