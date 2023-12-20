@@ -6,6 +6,10 @@ import PortfolioImage2 from "../assets/Project2.png";
 import PortfolioImage3 from "../assets/Project3.png";
 import PortfolioImage4 from "../assets/bank-of-flatiron.png";
 import { motion } from "framer-motion";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const Portfolio = () => {
   const projects = [
     {
@@ -45,9 +49,44 @@ const Portfolio = () => {
       codeLink:
         "https://github.com/DanielSudiOdeny/bank-of-flatiron-application",
       description:
-        "A banking application that lets you see your recent transactions in an easy-to-read table. You can add new transactions using a form, making it simple to keep your records up to date. Plus, there is a search bar to help you quickly find specific transactions. It's all about making your banking experience straightforward and accountable!",
+        "A banking application that allows you to see your recent transactions in an easy-to-read table. You can add new transactions using a form, making it simple to keep your records up to date. Plus, there is a search bar to help you quickly find specific transactions. It's all about making your banking experience straightforward and accountable!",
     },
   ];
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 0,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 0,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <div
       name="portfolio"
@@ -67,61 +106,62 @@ const Portfolio = () => {
             Check out some of my recent projects here
           </p> */}
         </motion.div>
-
-        <div className="flex gap-4 shadow-md shadow-gray-600 p-4 overflow-x-auto snap-x snap-mandatory md:scrollbar-thin md:scrollbar-track-gray-400/20 md:scrollbar-thumb-slate-400/80">
-          {projects.map(
-            ({ id, src, description, title, liveDemo, codeLink }) => (
-              <div
-                key={id}
-                className="flex w-[350px] md:w-full shadow-md shadow-gray-600 h-full snap-center md:opacity-50 md:hover:opacity-100 cursor-pointer transition-opacity duration-200"
-              >
-                <div className="p-4 h-[600px] flex flex-col justify-center gap-10 items-center md:w-[600px] w-[30rem] ">
-                  <div className=" md:w-5/6 mx-auto">
-                    <div>
-                      <img
-                        src={src}
-                        alt=""
-                        className="rounded-md duration-200 w-[20rem] md:w-full  h-[180px] md:h-[270px]"
-                      />
+        <div className="  shadow-md shadow-gray-600 p-4 ">
+          <Slider {...settings}>
+            {projects.map(
+              ({ id, src, description, title, liveDemo, codeLink }) => (
+                <div
+                  key={id}
+                  className=" grid md:w-[500px] shadow-md shadow-gray-600 h-full  md:opacity-80 md:hover:opacity-100 cursor-pointer transition-opacity duration-200"
+                >
+                  <div className="w-full flex flex-col justify-center items-center ">
+                    <div className="w-11/12 mx-auto">
+                      <div>
+                        <img
+                          src={src}
+                          alt=""
+                          className="rounded-md duration-200 w-full md:w-5/6 mx-auto  h-[180px] md:h-[400px]"
+                        />
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="mx-auto w-5/6 text-center md:w-5/6 flex flex-col gap-4">
-                    <h1 className="font-extrabold text-gray-50 h-14 md:pb-2 tracking-[2px] text-xl md:text-2xl">
-                      {title}
-                    </h1>
-                    <p className="text-gray-400 h-36 mb-6 md:h-32 text-center">
-                      {description}
-                    </p>
-                    <div className="pt-20  md:py-4  flex items-center justify-around font-bold text-xl md:text-2xl">
-                      <button className="   duration-200 hover:scale-105 hover:text-purple-500 flex gap-2 justify-center items-center ">
-                        <span>
-                          {" "}
-                          <a href={codeLink} target="_blank">
-                            Code
-                          </a>
-                        </span>{" "}
-                        <span>
-                          <TbBrandGithub size={22} />
-                        </span>
-                      </button>
-                      <button className=" duration-200 hover:scale-105 hover:text-purple-500 flex gap-2">
-                        <span>
-                          {" "}
-                          <a href={liveDemo} target="_blank">
-                            Live Demo
-                          </a>
-                        </span>{" "}
-                        <span>
-                          <TbExternalLink size={22} />
-                        </span>
-                      </button>
+                    <div className="mx-auto w-5/6  text-center md:w-5/6 flex flex-col gap-4">
+                      <h1 className="font-extrabold mt-6 text-gray-50 h-14 md:pb-2 tracking-[2px] text-xl md:text-2xl">
+                        {title}
+                      </h1>
+                      <p className="text-gray-400 h-36 mb-6 md:h-14 text-center">
+                        {description}
+                      </p>
+                      <div className="pt-20  md:py-4  flex items-center justify-around font-bold text-xl md:text-2xl">
+                        <button className="   duration-200 hover:scale-105 hover:text-purple-500 flex gap-2 justify-center items-center ">
+                          <span>
+                            {" "}
+                            <a href={codeLink} target="_blank">
+                              Code
+                            </a>
+                          </span>{" "}
+                          <span>
+                            <TbBrandGithub size={22} />
+                          </span>
+                        </button>
+                        <button className=" duration-200 hover:scale-105 hover:text-purple-500 flex gap-2">
+                          <span>
+                            {" "}
+                            <a href={liveDemo} target="_blank">
+                              Live Demo
+                            </a>
+                          </span>{" "}
+                          <span>
+                            <TbExternalLink size={22} />
+                          </span>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            )
-          )}
+              )
+            )}
+          </Slider>
         </div>
       </div>
     </div>
