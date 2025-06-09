@@ -4,7 +4,7 @@ import { TbBrandGithub } from "react-icons/tb";
 import PortfolioImage from "../assets/Portfolio.jpg";
 import PortfolioImage2 from "../assets/Project2.png";
 import PortfolioImage3 from "../assets/Project3.png";
-import PortfolioImage4 from "../assets/bank-of-flatiron.png";
+import PortfolioImage4 from "../assets/ProfitzLandingPage.png";
 import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -44,12 +44,12 @@ const Portfolio = () => {
     {
       id: 4,
       src: PortfolioImage4,
-      title: "Banking Application",
-      liveDemo: "https://bank-of-flatiron-application.vercel.app/",
+      title: "Profitz - Budgeting and Profit Tracking App",
+      liveDemo: "https://profitz-bjcqgwducah3hdgc.northeurope-01.azurewebsites.net/",
       codeLink:
-        "https://github.com/DanielSudiOdeny/bank-of-flatiron-application",
+        "https://github.com/DanielSudiOdeny/ProfitGeneratorApplication",
       description:
-        "A banking application that allows you to see your recent transactions in an easy-to-read table. You can add new transactions using a form, making it simple to keep your records up to date. Plus, there is a search bar to help you quickly find specific transactions. It's all about making your banking experience straightforward and accountable!",
+        "Profitz is a web-based budgeting and profit tracking application built with Asp.Net MVC and Entity Framework Core. It is specifically designed for individuals or small businesses engaged in foreign exchange transactions - for example, sending capital from Germany (EURO) to Kenya (KSH) to run profit-generating ventures",
     },
   ];
   const settings = {
