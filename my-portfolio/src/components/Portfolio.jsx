@@ -2,7 +2,7 @@ import React from "react";
 import { TbExternalLink } from "react-icons/tb";
 import { TbBrandGithub } from "react-icons/tb";
 import PortfolioImage from "../assets/Portfolio.jpg";
-import PortfolioImage2 from "../assets/Project2.png";
+import PortfolioImage2 from "../assets/NovelNest.png";
 import PortfolioImage3 from "../assets/Project3.png";
 import PortfolioImage4 from "../assets/ProfitzLandingPage.png";
 import { motion } from "framer-motion";
@@ -12,26 +12,18 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Portfolio = () => {
   const projects = [
+    
     {
       id: 1,
-      src: PortfolioImage,
-      title: "Job Seeking Application",
-      liveDemo: "https://workwise-dugl.onrender.com/",
-      codeLink: "https://github.com/DanielSudiOdeny/Job-Seeking-App",
+      src: PortfolioImage2,
+      title: "NovelNest - E-Book shopping application",
+      liveDemo: "https://novelnest-h6gge7hkhne6e0d9.northeurope-01.azurewebsites.net/",
+      codeLink: "https://github.com/DanielSudiOdeny/NovelNest",
       description:
-        "The JobSeeker app is a dynamic platform designed to empower individuals in their quest for professional growth. Tailored for job seekers, the app streamlines the job search process, offering a user-friendly interface and a range of features to enhance the overall experience.",
+        "Novel Nest is an ASP.NET Core Razor Pages web application for managing and selling books online. It features user authentication, role-based access, order management, and Stripe payment integration. Admins can process, ship, and cancel orders, while customers can browse and purchase books. The app includes robust validation and is designed for real-world e-commerce scenarios."
     },
     {
       id: 2,
-      src: PortfolioImage2,
-      title: "Fitness Tracker Application",
-      liveDemo: "",
-      codeLink: "https://github.com/DanielSudiOdeny/Fitness-Tracker",
-      description:
-        "The Fitness Tracker App helps user to track they workout progress inorder to keep fit. It majorly provides the user with the necessary tools that allow them to customize their workout routine.",
-    },
-    {
-      id: 3,
       src: PortfolioImage3,
       title: "Event Notifier application",
       liveDemo:
@@ -42,7 +34,7 @@ const Portfolio = () => {
         "An Event notifier application that allows event planners to connect with their audience by allowing audience to book tickets for the specific event the event planners create online. It takes away the struggle for the audience having to physically purchase the tickets from the event planner.",
     },
     {
-      id: 4,
+      id: 3,
       src: PortfolioImage4,
       title: "Profitz - Budgeting and Profit Tracking App",
       liveDemo: "https://profitz-bjcqgwducah3hdgc.northeurope-01.azurewebsites.net/",
@@ -50,6 +42,15 @@ const Portfolio = () => {
         "https://github.com/DanielSudiOdeny/ProfitGeneratorApplication",
       description:
         "Profitz is a web-based budgeting and profit tracking application built with Asp.Net MVC and Entity Framework Core. It is specifically designed for individuals or small businesses engaged in foreign exchange transactions - for example, sending capital from Germany (EURO) to Kenya (KSH) to run profit-generating ventures",
+    },
+    {
+      id: 4,
+      src: PortfolioImage,
+      title: "Job Seeking Application",
+      liveDemo: "https://workwise-dugl.onrender.com/",
+      codeLink: "https://github.com/DanielSudiOdeny/Job-Seeking-App",
+      description:
+        "The JobSeeker app is a dynamic platform designed to empower individuals in their quest for professional growth. Tailored for job seekers, the app streamlines the job search process, offering a user-friendly interface and a range of features to enhance the overall experience.",
     },
   ];
   const settings = {
